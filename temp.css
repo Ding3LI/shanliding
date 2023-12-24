@@ -1,0 +1,120 @@
+
+#nav-container {
+    position: relative;
+}
+
+#nav-overlay {
+    position: absolute;
+    top: 2.5em;
+    left: 2.5em;
+    z-index: -1;
+    background: rgba(201, 195, 195, 0.8);
+    border-radius: 50%;
+    transition: 1s;
+    transform: scale3d(0, 0, 0);
+}
+
+#nav-overlay.open {
+    transform: scale3d(1, 1, 1);
+}
+
+#nav-fullscreen {
+    width: 100%;
+    position: fixed;
+    transition: ease-in-out 0.25s;
+    transition-delay: 0s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#nav-fullscreen ul {
+    list-style: none;
+}
+
+#nav-fullscreen a {
+    color: white;
+    text-decoration: none;
+}
+
+#nav-fullscreen.open {
+    visibility: visible;
+    opacity: 1;
+    transition: ease-in-out 0.5s;
+    transition-delay: 0.25s;
+}
+
+body {
+    display: flex;
+    background-color: #2b5564;
+    overflow: hidden;
+    color: #3579d5;
+}
+
+#nav-overlay {
+    background: linear-gradient(180deg, #FF512F 10%, #FF512F 50%, #DD2476 90%);
+}
+
+#nav-fullscreen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Philosopher', sans-serif;
+    font-size: 7vh;
+}
+
+#nav-fullscreen li:hover {
+    list-style: disc;
+}
+
+
+.ham {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 400ms;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.hamRotate.active {
+    transform: rotate(45deg);
+}
+
+.line {
+    fill: none;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    stroke: #8cbcf3;
+    stroke-width: 5.5;
+    stroke-linecap: round;
+}
+
+.ham .top {
+    stroke-dasharray: 40 160;
+}
+
+.ham .middle {
+    stroke-dasharray: 40 142;
+    transform-origin: 50%;
+    transition: transform 400ms;
+}
+
+.ham .bottom {
+    stroke-dasharray: 40 85;
+    transform-origin: 50%;
+    transition: transform 400ms, stroke-dashoffset 400ms;
+}
+
+.ham.active .top {
+    stroke-dashoffset: -40px;
+}
+
+.ham.active .middle {
+    transform: rotate(90deg);
+}
+
+.ham.active .bottom {
+    stroke-dashoffset: -40px;
+}
+

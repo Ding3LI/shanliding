@@ -1,0 +1,112 @@
+.profile {
+    width: 100vw;
+    min-height: 100vh;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 50%;
+    grid-column-gap: 48px;
+    max-width: 1096px;
+    width: 100%;
+}
+
+.column {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    transform: translate3d(0, 0, 0);
+}
+
+.title {
+    white-space: nowrap;
+    margin-bottom: 24px;
+    opacity: 0;
+    transition: opacity 800ms ease 400ms;
+    &[data-visible='true'] {
+        opacity: 1;
+    }
+}
+
+.description {
+    opacity: 0;
+    transition: opacity 800ms ease 600ms;
+    &[data-visible='true'] {
+        opacity: 1;
+    }
+}
+
+.tag {
+    margin-top: 220px;
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 12px;
+    align-items: center;
+}
+
+.tagText {
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(0,229,255);
+    opacity: 0;
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+    transition-duration: 400ms;
+    transition-delay: 1.3s;
+    &[data-visible='true'] {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+.image {
+    position: relative;
+    width: 100%;
+}
+
+.svg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translate3d(50%, -20%, 0);
+    height: 100%;
+    z-index: 16;
+    opacity: 0;
+    transition: opacity 400ms ease 600ms;
+    fill: rgb(255 255 255 / 1);
+    &[data-visible='true'] {
+        opacity: 1;
+    }
+}
+
+.button {
+    opacity: 0;
+    transition: opacity 800ms ease 600ms;
+    &[data-visible='true'] {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+.verticalText {
+    font-family: 'DuanNing-slim', sans-serif;
+    position: absolute;
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    white-space: nowrap;
+    color: #ffffff;
+    text-shadow: 7px 9px 6px #3d2854, 6px -4px 5px #53ab98, 1px -10px 7px #ca4343, -11px 5px 14px #807656;
+    font-size: 22vw;
+    z-index: var(--zIndex1);
+    top: .7em;
+    left: -1.3em;
+}

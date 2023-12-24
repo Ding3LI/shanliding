@@ -1,0 +1,613 @@
+@import './scss/themes/theme-light.scss';
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300&display=swap');
+
+@font-face {
+    font-family: 'Philosopher';
+    src: url('./assets/fonts/Philosopher/Philosopher-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-display: block;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Philosopher-bold';
+    src: url('./assets/fonts/Philosopher/Philosopher-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-display: block;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Philosopher-italic';
+    src: url('./assets/fonts/Philosopher/Philosopher-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-display: block;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Philosopher-bolditalic';
+    src: url('./assets/fonts/Philosopher/Philosopher-BoldItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-display: block;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DuanNing-normal';
+    src: url('./assets/fonts/DuanNing/DuanNingMaoBiXingShuWanZheng-2.ttf') format('truetype');
+    font-weight: normal;
+    font-display: block;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DuanNing-slim';
+    src: url('./assets/fonts/DuanNing/DuanNingMaoBiXiaoKai-2.ttf') format('truetype');
+    font-weight: normal;
+    font-display: block;
+    font-style: normal;
+}
+
+:root {
+    --rgbBlack: 0, 0, 0;
+    --rgbWhite: 255, 255, 255;
+    --rgbAccent: 0, 229, 255;
+    --bezierFastoutSlowin: cubic-bezier(0.4, 0.0, 0.2, 1);
+    --durationXS: 200ms;
+    --durationS: 300ms;
+    --durationM: 400ms;
+    --durationL: 600ms;
+    --durationXL: 800ms;
+    --systemFontStack: system-ui, -apple-system, BlinkMacSystemFont, San Francisco, Roboto, Segoe UI, Ubuntu, Helvetica Neue, sans-serif;
+    --fontWeightRegular: 400;
+    --fontWeightMedium: 500;
+    --fontWeightBold: 700;
+    --lineHeightTitle: 1.1;
+    --lineHeightBody: 1.6;
+    --maxWidthS: 540px;
+    --maxWidthM: 720px;
+    --maxWidthL: 1096px;
+    --maxWidthXL: 1680px;
+    --spaceOuter: 64px;
+    --spaceXS: 4px;
+    --spaceS: 8px;
+    --spaceM: 16px;
+    --spaceL: 24px;
+    --spaceXL: 32px;
+    --space2XL: 48px;
+    --space3XL: 64px;
+    --space4XL: 96px;
+    --space5XL: 128px;
+    --zIndex0: 0;
+    --zIndex1: 4;
+    --zIndex2: 8;
+    --zIndex3: 16;
+    --zIndex4: 32;
+    --zIndex5: 64;
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #445299 !important;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    overflow: -moz-scrollbars-none; /* Firefox */
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+section {
+    min-height: 100vh;
+}
+
+.scrollBar {
+    position: relative;
+    z-index: var(--zIndex3);
+
+    .progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: rgba(243, 106, 106, 0.78);
+        transform-origin: 0;
+    }
+}
+
+.title-styles {
+    font-family: 'Philosopher', sans-serif;
+    font-size: 250%;
+}
+
+#hero {
+    height: 100%;
+    min-height: 450px;
+    width: 100%;
+    background-size: cover;
+    -webkit-background-size: cover;
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: var(----zIndex1);
+
+    .hero-bg1 {
+        position: absolute;
+        bottom: -10%;
+        left: 0;
+        width: 100%;
+    }
+
+    #hero-content {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        padding-left: 24%;
+        height: 100%;
+        font-size: 32px;
+        z-index: var(--zIndex1);
+
+        .hero-name {
+            font-size: 100%;
+            color: #f2a77d;
+            font-family: 'Philosopher', Arial, sans-serif;
+            width: 100%;
+        }
+
+        .hero-subtitle {
+            font-size: 300%;
+            color: #f2a77d;
+            font-family: 'Philosopher-bolditalic', Arial, sans-serif;
+            width: 100%;
+        }
+
+        #typed-subtitle {
+            font-family: 'Philosopher-bolditalic', 'DuanNing-normal', sans-serif;
+            font-size: 150%;
+            color: rgba(116, 225, 28, 0.89);
+        }
+    }
+}
+
+.main-logo {
+    position: absolute;
+    z-index: var(--zIndex5);
+    width: 15em;
+    height: auto;
+    left: -1.5em;
+    top: 0.5em;
+}
+
+.language-icon {
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.project-date {
+    font-size: 16px;
+    font-family: 'Philosopher', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 8px 15px 2px 15px;
+    position: relative;
+    z-index: -500;
+    border-top: 5px solid #696969;
+    border-radius: 0 0 5px 5px;
+    background-color: #696969;
+    color: white;
+}
+
+.skills-tile {
+    background-color: transparentize(#F8F5F4, 0.95);
+    padding: 10px 10px 5px 10px;
+    width: 100px;
+    margin: 5px 0 5px 0;
+    border-radius: 8px;
+}
+
+.language {
+    font-size: 25px;
+    padding-bottom: 10px;
+    padding-top: 80px;
+}
+
+.slider-image {
+    border: 5px solid #D7CAAA;
+}
+
+.slider-tab {
+    background-color: #D7CAAA;
+    height: 25px;
+}
+
+.slider-iconfiy {
+    margin-top: 10px;
+}
+
+.styles_typicalWrapper__1_Uvh::after {
+    cursor: none !important;
+    display: none;
+}
+
+#about {
+    position: relative;
+    overflow: hidden;
+    z-index: var(--zIndex1);
+}
+
+#about h1 {
+    padding-top: 5%;
+    font: 18px/24px 'opensans-bold', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: black;
+    text-align: center;
+}
+
+.foto img {
+    display: block;
+    width: 100%;
+}
+
+.foto div {
+    background: #ffffff;
+    display: inline-block;
+    margin: 0 auto 5% auto;
+    padding: 10px 10px 5px;
+    text-align: center;
+    text-decoration: none;
+    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+    -webkit-transition: all .20s linear;
+    -moz-transition: all .20s linear;
+    transition: all .20s linear;
+    z-index: var(--zIndex0);
+    position: relative;
+}
+
+.foto div:after {
+    color: #333;
+    font-size: 25px;
+    content: attr(title);
+    position: relative;
+    top: 15px;
+}
+
+.foto div:hover {
+    -webkit-transform: scale(1.01);
+    -moz-transform: scale(1.01);
+    transform: scale(1.01);
+    z-index: 10;
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
+    -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
+}
+
+.project-title-settings {
+    margin-top: 5%;
+    font: 18px/24px 'opensans-bold', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: black;
+    text-align: center;
+}
+
+.polaroid span {
+    background: #ffffff;
+    display: inline-block;
+    margin: 1em 1em 1em;
+    padding: 0.5em 0.5em 0.5em;
+    text-align: center;
+    text-decoration: none;
+    -webkit-box-shadow:
+    20px -18px 0px 0px rgba(1, 214, 214, 0.88), -20px 18px 0px 0px rgb(228, 0, 41), 0px 0px 14px 9px rgb(222 99 236 / 66%);
+    -moz-box-shadow:
+    20px -18px 0px 0px rgba(1, 214, 214, 0.88), -20px 18px 0px 0px rgb(228, 0, 41), 0px 0px 14px 9px rgb(222 99 236 / 66%);
+    box-shadow:
+    20px -18px 0px 0px rgba(1, 214, 214, 0.88), -20px 18px 0px 0px rgb(228, 0, 41), 0px 0px 14px 9px rgb(222 99 236 / 66%);
+    -webkit-transition: all .20s linear;
+    -moz-transition: all .20s linear;
+    transition: all .20s linear;
+    z-index: var(--zIndex0);
+    position: relative;
+}
+
+.link-href {
+    color: black;
+}
+
+.wave {
+    font-size: 160%;
+}
+
+.font-trebuchet {
+    font-family: 'Philosopher', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#preview {
+    width: 500px;
+    background-color: #ebeaf5;
+    padding: 15px;
+    position: relative;
+    margin-bottom: 15%;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.experience-icon {
+    font-size: 300%;
+    margin-top: 25%;
+    text-align: center;
+}
+
+.main-badge {
+    font-size: 13px !important;
+    text-align: left !important;
+    padding: 5px 8px 5px 8px !important;
+    vertical-align: baseline;
+    background-color: #AE944F !important;
+    color: white;
+    font-weight: lighter !important;
+    font-family: 'Philosopher', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.experience-badge {
+    font-size: 11px !important;
+    text-align: left !important;
+    padding: 5px 8px 5px 8px !important;
+    vertical-align: baseline;
+    background-color: #f9f5e9 !important;
+    color: black;
+    font-weight: lighter !important;
+    font-family: 'Philosopher', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.vertical-timeline-element-date {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+@media only screen and (max-width: 1170px) {
+    .experience-icon {
+        font-size: 170%;
+        margin-top: 27%;
+        text-align: center;
+    }
+}
+
+.modal-inside .modal-content {
+    background: white;
+}
+
+.bars {
+    width: 95%;
+    float: left;
+    padding: 0;
+    text-align: left;
+}
+
+.bars .skills {
+    margin-top: 36px;
+    list-style: none;
+}
+
+.bars li {
+    position: relative;
+    margin-bottom: 60px;
+    background: #ccc;
+    height: 42px;
+    border-radius: 3px;
+}
+
+.bars li em {
+    font: 15px 'opensans-bold', sans-serif;
+    color: #313131;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: normal;
+    position: relative;
+    top: -36px;
+}
+
+.bar-expand {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding-right: 24px;
+    background: #313131;
+    display: inline-block;
+    height: 42px;
+    line-height: 42px;
+    border-radius: 3px 0 0 3px;
+}
+
+.modal-close {
+    text-align: right;
+    padding: 10px 15px 10px 15px;
+    cursor: pointer;
+}
+
+.close-icon {
+    color: black;
+    font-weight: lighter !important;
+}
+
+.modal-description {
+    text-align: justify;
+    padding: 5px 5px 0 5px;
+    margin-bottom: 20px;
+    font-size: 12px;
+}
+
+.awssld__next {
+    outline: none !important;
+}
+
+.awssld__prev {
+    outline: none !important;
+}
+
+.loader-bar-color {
+    color: black !important;
+}
+
+#portfolio {
+    padding-bottom: 5%;
+}
+
+.portfolio-item {
+    max-width: 100%;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.portfolio .portfolio-item .portfolio-item-caption {
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+    opacity: 0;
+    background-color: rgba(51, 51, 51, 0.9);
+}
+
+.portfolio .portfolio-item .portfolio-item-caption:hover {
+    opacity: 1;
+}
+
+.portfolio .portfolio-item .portfolio-item-caption .portfolio-item-caption-content {
+    font-size: 1.5rem;
+}
+
+@media (min-width: 576px) {
+    .portfolio .closeButtonResponsive {
+        display: block;
+    }
+    .portfolio .portfolio-item {
+        margin-bottom: 30px;
+    }
+}
+
+#skills {
+    min-height: 200px;
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 10%;
+}
+
+.section-title {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    font: 18px/24px 'opensans-bold', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #fff;
+    text-align: center;
+}
+
+.skill-icon {
+    font-size: 180%;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+footer {
+    min-height: 100px;
+    width: 100%;
+    overflow: hidden;
+    font-size: 14px;
+    color: white;
+    position: relative;
+    text-align: center;
+}
+
+footer a,
+footer a:visited {
+    color: #fff;
+}
+
+footer a:hover,
+footer a:focus {
+    color: #fff;
+}
+
+.social-links {
+    margin-top: 50px;
+    font-size: 22px;
+}
+
+@media (max-width: 768px) {
+    #hero {
+        .hero-bg1 {
+            bottom: 0;
+        }
+
+        #hero-content {
+            padding-left: 10%;
+
+            .hero-name {
+                font-size: 70%;
+            }
+
+            .hero-subtitle {
+                font-size: 180%;
+            }
+
+            #typed-subtitle {
+                font-size: 120%;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1440px) {
+    #hero {
+        #hero-content {
+
+            .hero-name {
+                font-size: 100%;
+            }
+
+            .hero-subtitle {
+                font-size: 300%;
+            }
+
+            #typed-subtitle {
+                font-size: 150%;
+            }
+        }
+    }
+}
+
+@media (min-width: 1441px) {
+    #hero {
+        #hero-content {
+            .hero-name {
+                font-size: 150%;
+            }
+
+            .hero-subtitle {
+                font-size: 450%;
+            }
+
+            #typed-subtitle {
+                font-size: 250%;
+            }
+        }
+    }
+}
